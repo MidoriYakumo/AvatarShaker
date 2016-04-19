@@ -1,2 +1,3 @@
-# qml-AvatarShaker
+﻿# qml-AvatarShaker
 Shake your avatar!
+![ScreenShot](./sc.gif)
