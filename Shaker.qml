@@ -102,11 +102,11 @@ Item {
 
 		Timer{
 			id:recorder
-			interval:1000./30 + 1000
+			interval:1000./30// + 1000
 			repeat: true
 			property int cnt: 0
 			function save(data){
-				var s = "/tmp/Shaker_"+cnt+".png";
+				var s = "/tmp/Shaker_"+cnt+".ppm";
 				console.log("Grab saved as " + s)
 				data.saveToFile(s)
 			}
