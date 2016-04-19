@@ -13,11 +13,16 @@ Image {
 	property var easing: Easing.Linear
 	property int duration: 500
 
+	onAminChanged:anime.restart()
+	onAmaxChanged:anime.restart()
+
+
 	transform: Rotation {
 		id: _rotation
 		origin.x: root.rrox * root.width
 		origin.y: root.rroy * root.height
 		SequentialAnimation on angle {
+			id:anime
 			running: true
 			loops: Animation.Infinite
 			NumberAnimation {

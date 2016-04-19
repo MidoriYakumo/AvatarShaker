@@ -61,6 +61,23 @@ Item {
 				}
 				dripAnime.start()
 			}
+
+			property int startX
+			property int startY
+			onPressedChanged: {
+				startX = mouseX
+				startY = mouseY
+			}
+
+			onPositionChanged: {
+				console.log(l1.amin, l1.amax)
+				l1.amax += mouseX - startX
+				l1.amin -= mouseX - startX
+				l2.amax += mouseY - startY
+				l2.amin -= mouseY - startY
+				startX = mouseX
+				startY = mouseY
+			}
 		}
 
 		Rectangle {
@@ -85,7 +102,7 @@ Item {
 
 		Timer{
 			id:recorder
-			interval:1000./30
+			interval:1000./30 + 1000
 			repeat: true
 			property int cnt: 0
 			function save(data){
